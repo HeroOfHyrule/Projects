@@ -1,0 +1,51 @@
+//  Budgeting  
+//  Author: Kyle Cooksey
+
+
+import java.util.Scanner;
+
+public class Problem16
+{
+   public static void main(String [] args)
+   {
+      Scanner scanner = new Scanner(System.in);
+      
+      // Variables
+      String userInput;
+      int userBudget, userExpenses;
+      double runningTotal = 0;
+      char letter;
+      
+         System.out.print( "Enter the amount that you have budgeted for the month: " );
+         userBudget = scanner.nextInt();  
+      
+      do
+      {
+
+         System.out.print( "Enter your expenses for the month: " );
+         userExpenses = scanner.nextInt();
+      
+         runningTotal = userExpenses + runningTotal;
+   
+         System.out.println( "Your running total is: " + runningTotal );
+         System.out.print( " Would you like to add more expenses? Enter Y for Yes and N for No: " );
+         letter = scanner.next().charAt(0);
+      }
+      while( letter == 'Y' || letter == 'y' );
+      
+      if ( runningTotal < userBudget )
+      {
+         System.out.println( "Congrats! You were under budget by: " + (userBudget - runningTotal));
+      }
+      else if ( userBudget < runningTotal)
+      {
+         System.out.println( "Uh-oh! You were over budget by: " + (runningTotal - userBudget));
+      }
+      else
+      {
+         System.out.println( "You were exactly on budget! " );
+      }        
+   }
+}
+         
+       
