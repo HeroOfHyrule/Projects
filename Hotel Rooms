@@ -1,0 +1,59 @@
+// Author: Cooksey
+// Hotel Rooms
+
+import java.util.Scanner;
+
+public class Problem7
+{
+   public static void main(String [] args)
+   {
+      Scanner scanner = new Scanner(System.in);
+      
+      // Variables
+      int hotelFloors = 0;
+      int hotelRooms = 0;
+      int roomsOccupied = 0;
+      double totalRooms = 0;
+      double totalRoomsOccupied = 0;
+      double totalOccupancy = 0;
+      double occupancyRate = 0;
+      double vacantRooms = 0;
+      
+      
+      //Input
+      System.out.println( "What are the number of floors in the hotel?" );
+      hotelFloors = scanner.nextInt();
+      
+      while ( hotelFloors < 1 )
+      {
+         System.out.println( "Error!" );
+         hotelFloors= scanner.nextInt();
+      }
+      for( int i = 0; i < hotelFloors; i++)
+      {
+         System.out.println( "What are the number of rooms on this floor?" );
+         hotelRooms = scanner.nextInt();
+          
+         while( hotelRooms < 10)
+         {         
+            System.out.println( "Error!" );
+            hotelRooms = scanner.nextInt();
+         }
+         
+         System.out.println( "How many of the rooms are occupied?" );
+         roomsOccupied = scanner.nextInt();
+         
+         // Formula's
+         totalRooms += hotelRooms;
+         totalRoomsOccupied += roomsOccupied;
+         occupancyRate = totalRoomsOccupied / totalRooms;
+         vacantRooms = totalRooms - totalRoomsOccupied;    
+     }
+     
+      // Output
+      System.out.printf( " Hotel # of rooms: %f.\n Occupied rooms: %f.\n Vacant rooms: %f.\n Occupancy rate: %.2f.", totalRooms, totalRoomsOccupied, vacantRooms, occupancyRate );
+      
+   }  
+}
+   
+   
